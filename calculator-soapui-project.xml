@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<con:soapui-project id="2ed9b252-8aca-49e5-8b96-eef6d3b11253" activeEnvironment="Default" name="calculator" resourceRoot="" soapui-version="5.5.0" xmlns:con="http://eviware.com/soapui/config"><con:settings/><con:interface xsi:type="con:WsdlInterface" id="6902931c-7f8f-478c-b35a-477bbb28daf8" wsaVersion="NONE" name="CalculatorImplServiceSoapBinding" type="wsdl" bindingName="{http://calculator.services/}CalculatorImplServiceSoapBinding" soapVersion="1_1" anonymous="optional" definition="https://th-apex-soap-service.herokuapp.com/assets/calculator.xml?wsdl" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"><con:settings/><con:definitionCache type="TEXT" rootPart="https://th-apex-soap-service.herokuapp.com/assets/calculator.xml?wsdl"><con:part><con:url>https://th-apex-soap-service.herokuapp.com/assets/calculator.xml?wsdl</con:url><con:content><![CDATA[<wsdl:definitions name="CalculatorImplService" targetNamespace="http://calculator.services/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://calculator.services/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http">
+  <wsdl:types>
+    <xs:schema elementFormDefault="unqualified" targetNamespace="http://calculator.services/" version="1.0" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+      <xs:element name="doAdd" type="tns:doAdd"/>
+      <xs:element name="doAddResponse" type="tns:doAddResponse"/>
+      <xs:element name="doDivide" type="tns:doDivide"/>
+      <xs:element name="doDivideResponse" type="tns:doDivideResponse"/>
+      <xs:element name="doMultiply" type="tns:doMultiply"/>
+      <xs:element name="doMultiplyResponse" type="tns:doMultiplyResponse"/>
+      <xs:element name="doSubtract" type="tns:doSubtract"/>
+      <xs:element name="doSubtractResponse" type="tns:doSubtractResponse"/>
+      <xs:complexType name="doDivide">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doDivideResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doSubtract">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doSubtractResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doMultiply">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doMultiplyResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doAdd">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="arg0" type="xs:double"/>
+          <xs:element minOccurs="0" name="arg1" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+      <xs:complexType name="doAddResponse">
+        <xs:sequence>
+          <xs:element minOccurs="0" name="return" type="xs:double"/>
+        </xs:sequence>
+      </xs:complexType>
+    </xs:schema>
+  </wsdl:types>
+  <wsdl:message name="doSubtractResponse">
+    <wsdl:part element="tns:doSubtractResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doMultiplyResponse">
+    <wsdl:part element="tns:doMultiplyResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doAddResponse">
+    <wsdl:part element="tns:doAddResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDivide">
+    <wsdl:part element="tns:doDivide" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doSubtract">
+    <wsdl:part element="tns:doSubtract" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doDivideResponse">
+    <wsdl:part element="tns:doDivideResponse" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doMultiply">
+    <wsdl:part element="tns:doMultiply" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="doAdd">
+    <wsdl:part element="tns:doAdd" name="parameters"></wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="Calculator">
+    <wsdl:operation name="doDivide">
+      <wsdl:input message="tns:doDivide" name="doDivide"></wsdl:input>
+      <wsdl:output message="tns:doDivideResponse" name="doDivideResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSubtract">
+      <wsdl:input message="tns:doSubtract" name="doSubtract"></wsdl:input>
+      <wsdl:output message="tns:doSubtractResponse" name="doSubtractResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doMultiply">
+      <wsdl:input message="tns:doMultiply" name="doMultiply"></wsdl:input>
+      <wsdl:output message="tns:doMultiplyResponse" name="doMultiplyResponse"></wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doAdd">
+      <wsdl:input message="tns:doAdd" name="doAdd"></wsdl:input>
+      <wsdl:output message="tns:doAddResponse" name="doAddResponse"></wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="CalculatorImplServiceSoapBinding" type="tns:Calculator">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="doDivide">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doDivide">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doDivideResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doSubtract">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doSubtract">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doSubtractResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doMultiply">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doMultiply">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doMultiplyResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="doAdd">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="doAdd">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="doAddResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="CalculatorImplService">
+    <wsdl:port binding="tns:CalculatorImplServiceSoapBinding" name="CalculatorImplPort">
+      <soap:address location="https://th-apex-soap-service.herokuapp.com/service/calculator"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>]]></con:content><con:type>http://schemas.xmlsoap.org/wsdl/</con:type></con:part></con:definitionCache><con:endpoints><con:endpoint>https://th-apex-soap-service.herokuapp.com/service/calculator</con:endpoint></con:endpoints><con:operation id="4f425be9-99a4-426c-99af-8c32525fe6ea" isOneWay="false" action="" name="doAdd" bindingOperationName="doAdd" type="Request-Response" outputName="doAddResponse" inputName="doAdd" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="fd3d7fbf-25ba-4117-85db-f0b56267d920" name="Request 1"><con:settings><con:setting id="com.eviware.soapui.impl.wsdl.WsdlRequest@request-headers">&lt;xml-fragment/></con:setting></con:settings><con:encoding>UTF-8</con:encoding><con:endpoint>https://th-apex-soap-service.herokuapp.com/service/calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.services/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cal:doAdd>\r
+         <!--Optional:-->\r
+         <arg0>1</arg0>\r
+         <!--Optional:-->\r
+         <arg1>1</arg1>\r
+      </cal:doAdd>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:credentials><con:authType>No Authorization</con:authType></con:credentials><con:jmsConfig JMSDeliveryMode="PERSISTENT"/><con:jmsPropertyConfig/><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.services/Calculator/doAdd"/><con:wsrmConfig version="1.2"/></con:call></con:operation><con:operation id="8d2a659e-d68b-4b25-bba6-db1be2ba996b" isOneWay="false" action="" name="doDivide" bindingOperationName="doDivide" type="Request-Response" outputName="doDivideResponse" inputName="doDivide" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="e2031ca8-381a-4718-b836-990f576a2346" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://th-apex-soap-service.herokuapp.com/service/calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.services/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cal:doDivide>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+         <!--Optional:-->\r
+         <arg1>?</arg1>\r
+      </cal:doDivide>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.services/Calculator/doDivide"/></con:call></con:operation><con:operation id="88fb134a-2dec-4960-809d-bbbafc25d9b4" isOneWay="false" action="" name="doMultiply" bindingOperationName="doMultiply" type="Request-Response" outputName="doMultiplyResponse" inputName="doMultiply" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="3047ab26-ec9e-4499-a5cb-31897af063e7" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://th-apex-soap-service.herokuapp.com/service/calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.services/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cal:doMultiply>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+         <!--Optional:-->\r
+         <arg1>?</arg1>\r
+      </cal:doMultiply>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.services/Calculator/doMultiply"/></con:call></con:operation><con:operation id="5ca98234-71fd-483a-8239-076ece4b4f35" isOneWay="false" action="" name="doSubtract" bindingOperationName="doSubtract" type="Request-Response" outputName="doSubtractResponse" inputName="doSubtract" receivesAttachments="false" sendsAttachments="false" anonymous="optional"><con:settings/><con:call id="a84726ee-d578-41de-9f7e-59c006005d5e" name="Request 1"><con:settings/><con:encoding>UTF-8</con:encoding><con:endpoint>https://th-apex-soap-service.herokuapp.com/service/calculator</con:endpoint><con:request><![CDATA[<soapenv:Envelope xmlns:soapenv="http://schemas.xmlsoap.org/soap/envelope/" xmlns:cal="http://calculator.services/">\r
+   <soapenv:Header/>\r
+   <soapenv:Body>\r
+      <cal:doSubtract>\r
+         <!--Optional:-->\r
+         <arg0>?</arg0>\r
+         <!--Optional:-->\r
+         <arg1>?</arg1>\r
+      </cal:doSubtract>\r
+   </soapenv:Body>\r
+</soapenv:Envelope>]]></con:request><con:wsaConfig mustUnderstand="NONE" version="200508" action="http://calculator.services/Calculator/doSubtract"/></con:call></con:operation></con:interface><con:properties/><con:wssContainer/><con:oAuth2ProfileContainer/><con:oAuth1ProfileContainer/></con:soapui-project>
